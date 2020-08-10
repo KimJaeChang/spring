@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+
 @Repository
 public class CampDAOImpl implements CampDAO{
 	
@@ -20,4 +21,10 @@ public class CampDAOImpl implements CampDAO{
 		// TODO Auto-generated method stub
 		return sqlSession.selectList(nameSpace + ".camplist");
 	}
+
+
+
+
+
+		
 }

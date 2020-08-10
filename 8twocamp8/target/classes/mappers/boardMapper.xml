@@ -7,7 +7,7 @@
 	<!-- 글 추가 -->
   <insert id = "register" parameterType = "kr.co.twocamp.board.BoardBean">
   	insert into board (bno, title, content, id, regdate, readcnt, etc, del, rating)
-  	values (#{bno}, #{title}, #{content}, #{id}, curdate(), 0,#{etc}, 0,#{rating})
+  	values (#{bno}, #{title}, #{content}, #{id}, now(), 0,#{etc}, 0, #{rating})
   </insert>
  
   <!-- 전체조회 -->
