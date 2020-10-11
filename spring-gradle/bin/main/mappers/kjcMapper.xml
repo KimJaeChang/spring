@@ -3,10 +3,12 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
-<mapper namespace="kjc.mapper.kjcMapper">
+<mapper namespace="kjc.service.mapper.kjcMapper">
         
     <select id="selectkjcList" parameterType="kjc.service.KjcVO" resultType="kjc.service.KjcVO">
         select * from kjc.kim
     </select>
+    
+    
     
 </mapper>

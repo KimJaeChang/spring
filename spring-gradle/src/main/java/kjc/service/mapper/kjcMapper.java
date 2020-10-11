@@ -6,5 +6,5 @@ import kjc.service.KjcVO;
 
 public interface kjcMapper {
 	
-	public List<KjcVO> selectkjcList();
+	public List<KjcVO> selectkjcList() throws Exception;
 }
