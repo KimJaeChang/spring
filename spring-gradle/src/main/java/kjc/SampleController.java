@@ -15,8 +15,8 @@ import kjc.service.mapper.kjcMapper;
 @Controller
 public class SampleController {
     
-//    @Autowired
-//    private kjcMapper mapper;
+    @Autowired
+    private kjcMapper mapper;
     
     @RequestMapping(value="/", method = RequestMethod.GET)
     public String home(Model model) throws Exception{
@@ -28,14 +28,14 @@ public class SampleController {
     
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login() throws Exception {
-//    		List<KjcVO> list = mapper.selectkjcList();
-//        
-//        for(int i=0; i<list.size(); i++){
-//            System.out.println("id : " + list.get(i).getKid());        
-//            System.out.println("name : " + list.get(i).getKname());
-//            System.out.println("address : " + list.get(i).getKaddress());
-//            System.out.println("phone : " + list.get(i).getKphone());
-//        }        
+    		List<KjcVO> list = mapper.selectkjcList();
+        
+        for(int i=0; i<list.size(); i++){
+            System.out.println("id : " + list.get(i).getKid());        
+            System.out.println("name : " + list.get(i).getKname());
+            System.out.println("address : " + list.get(i).getKaddress());
+            System.out.println("phone : " + list.get(i).getKphone());
+       }        
     	return "login";
     	
     }
