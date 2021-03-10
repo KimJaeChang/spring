@@ -22,16 +22,14 @@ public class homeController {
 	private static final Logger logger = LoggerFactory.getLogger(homeController.class);
 	
 	@GetMapping("/")
-	public String login(Model model) {
+	public String login() {
 		
-		model.addAttribute("data", "안녕~");
 		return "login";
 	}
 	
 	@GetMapping("/home")
-	public String home(Model model) {
+	public String home() {
 		
-		model.addAttribute("data", "안녕~");
 		return "home";
 	}
 	

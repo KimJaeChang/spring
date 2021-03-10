@@ -93,16 +93,16 @@
 				'memberPassword' : memberPassword
 			},
 			success : function(data,textStatus,xhr) {
-				alert(data);
-				alert(textStatus);
-				alert(xhr.status);
-				alert(data+"님 환영합니다.");
-				locaion.href="/home"
+				if(xhr.status==200) {
+					alert(data+"님 환영합니다.");
+					location.href="/home";
+				}
+				else {
+					alert("회원정보를 확인해주세요");
+				}
+				
 			},
 			error : function(xhr,status,error) {
-				alert(xhr);
-				alert(status);
-				alert(error);
 				alert("통신오류가 발생하였습니다.")
 			}
 		

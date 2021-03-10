@@ -8,6 +8,7 @@
 	<select id="selectMemberInfo" resultType="com.kjcspring.model.MemberInfo">
 		SELECT memberUID, memberEmail, memberPassword, memberName
 		FROM   memberInfo
+		WHERE  memberEmail = #{memberEmail} AND memberPassword = #{memberPassword}
 	</select>
 
 </mapper>

@@ -6,22 +6,22 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kjcspring.dao.*;
 import com.kjcspring.model.*;
 
+@Controller
 public class loginApiController {
 
 	@Autowired
 	MemberInfoDAO memberInfoDAO;
 	
 	@PostMapping("/loginCheck")
-	public ResponseEntity<String> loginCheck(HttpServletRequest request,@RequestParam(value="memberEmail") String memberEmail, MemberInfo memberInfo) {
+	public ResponseEntity<String> loginCheck(HttpServletRequest request, MemberInfo memberInfo) {
 		
-		System.out.println("memberInfo : " + memberInfo.toString());
-		System.out.println(memberEmail);
 		HttpSession session = request.getSession();
 		MemberInfo member = memberInfoDAO.selectMemberInfo(memberInfo);
 		
