@@ -2,6 +2,9 @@ package com.kjcspring.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.apache.catalina.core.ApplicationContext;
 import org.apache.ibatis.mapping.Environment;
 import org.slf4j.Logger;
@@ -28,9 +31,22 @@ public class homeController {
 	}
 	
 	@GetMapping("/home")
-	public String home() {
+	public String home(HttpServletRequest request) {
 		
-		return "home";
+		HttpSession session = request.getSession();
+		
+		if(session!=null) {
+			
+			return "home";
+		}
+		
+		return "login";
+	}
+	
+	@GetMapping("/bookList")
+	public String bookList() {
+		
+		return "bookList";
 	}
 	
 }

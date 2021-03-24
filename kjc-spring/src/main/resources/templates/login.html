@@ -79,6 +79,7 @@
 
 </body>
 <script  th:inline="javascript">
+
 	function loginCheck() {
 		
 		var memberEmail = $("#memberEmail").val();
@@ -99,6 +100,8 @@
 				}
 				else {
 					alert("회원정보를 확인해주세요");
+					$("#memberEmail").val(null);
+					$("#memberPassword").val(null);
 				}
 				
 			},
