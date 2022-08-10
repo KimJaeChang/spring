@@ -1,0 +1,57 @@
+spring:
+  profiles:
+    active: ${env}
+    config:
+      import: classpath:/${env}/application-${env}.yml
+  thymeleaf:
+    prefix: classpath:templates/
+    suffix: .html
+    check-template-location: true
+    mode: HTML5
+    cache: false
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: true
+mybatis:
+  #config-location: classpath:/sql/config/mybatis-config.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    #call-setters-on-nulls: true
+  mapper-locations: classpath:/sql/mappers/*Mapper.xml
+
+---
+spring :
+  profiles : dev
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@1.232.56.200:1521:ORCL
+    username: chasygo
+    password: chasygo!
+---
+spring :
+  profiles : local
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@1.232.56.200:1521:ORCL
+    username: chasygo
+    password: chasygo!
+
+---
+spring :
+  profiles : home
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/kjc?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: 12345
+
+---
+spring :
+  profiles : prod
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@EVERON2012-ORACLE.CU8AA47GTS3H.AP-NORTHEAST-2.RDS.AMAZONAWS.COM:2012:EVERONDB
+    username: chasygo
+    password: everon7719@

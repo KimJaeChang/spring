@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@1.232.56.200:1521:ORCL
+    username: chasygo
+    password: chasygo!
+#  data:
+#    mongodb:
+#      host: 192.168.35.222
+#      port: 27017
+#      authentication-database: csms_log
+#      database: LogTest
+#      username: everon_dev
+#      password: Everon!01

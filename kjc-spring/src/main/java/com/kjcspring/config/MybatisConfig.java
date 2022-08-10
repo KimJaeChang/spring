@@ -9,24 +9,24 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
-@Configuration
-@MapperScan(basePackages="com.kjcspring.dao")
+//@Configuration
+//@MapperScan(basePackages="com.kjcspring.dao")
 public class MybatisConfig {
 	
-	@Bean
-    public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
-        SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
-        sqlSessionFactory.setDataSource(dataSource);
-        sqlSessionFactory.setTypeAliasesPackage("kjc.kjcspring.model");
-        sqlSessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:/mapper/*.xml"));
-        
-        return sqlSessionFactory.getObject();
-    }
-	
-	@Bean
-	public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
-		
-		return new SqlSessionTemplate(sqlSessionFactory);
-	}
+//	@Bean
+//    public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
+//        SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
+//        sqlSessionFactory.setDataSource(dataSource);
+//        sqlSessionFactory.setTypeAliasesPackage("com.kjcspring.model");
+//        //sqlSessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:/sql/mappers/*.xml"));
+//
+//        return sqlSessionFactory.getObject();
+//    }
+//
+//	@Bean
+//	public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
+//
+//		return new SqlSessionTemplate(sqlSessionFactory);
+//	}
 	
 }

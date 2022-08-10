@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@EVERON2012-ORACLE.CU8AA47GTS3H.AP-NORTHEAST-2.RDS.AMAZONAWS.COM:2012:EVERONDB
+    username: chasygo
+    password: everon7719@
+#  data:
+#    mongodb:
+#      host: 192.168.35.222
+#      port: 27017
+#      authentication-database: csms_log
+#      database: LogTest
+#      username: everon_dev
+#      password: Everon!01
