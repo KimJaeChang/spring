@@ -1,8 +1,8 @@
 spring:
   profiles:
     active: ${env}
-    config:
-      import: classpath:/${env}/application-${env}.yml
+#  config:
+#    import: classpath:/${env}/application-${env}.yml
   thymeleaf:
     prefix: classpath:templates/
     suffix: .html
@@ -11,7 +11,7 @@ spring:
     cache: false
   devtools:
     restart:
-      enabled: true
+      enabled: false
     livereload:
       enabled: true
 mybatis:

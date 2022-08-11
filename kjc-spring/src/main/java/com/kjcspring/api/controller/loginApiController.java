@@ -19,7 +19,13 @@ public class loginApiController {
 	private MemberInfoService memberInfoService;
 	
 //	private static final Logger logger = LoggerFactory.getLogger(homeController.class);
-	
+
+	/**
+	 * @param request
+	 * @param memberInfo
+	 * 회원 여부 체크
+	 * @return member
+	 */
 	@PostMapping("/loginCheck")
 	public ResponseEntity<String> loginCheck(HttpServletRequest request, MemberInfo memberInfo) {
 		
